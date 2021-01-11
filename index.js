@@ -31,9 +31,9 @@ const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Bardokill Admin\n' 
+            + 'FN:itachin Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=5516988466655:+55 1698846-6655\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=5573981044096:+55 7398104-4096\n' 
             + 'END:VCARD' 
 prefix = '!'
 blocked = []          
@@ -47,8 +47,8 @@ const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Jul
 const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
     XBOT: '❉AmpibI❉', 
-    instagram: 'https://instagram.com/rafael_rp16', 
-    nomer: 'wa.me/5516988466655',
+    instagram: ' https://www.instagram.com/invites/contact/?i=1ely6hc1q89h5&utm_content=chw5761', 
+    nomer: 'wa.me/5573981044096',
     youtube: 'https://youtube.com/channel/UCqGpTWV95tN6P4CI5yLt6zQ', 
     whatsapp: 'Comming soon', 
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
@@ -154,7 +154,7 @@ client.on('group-participants-update', async (anu) => {
 				wait: '❬❗❭ Ta processando fdp calma ai😴',
 				success: '️❬ ✔ ❭ 𝘀𝘂𝗰𝗰𝗲𝘀𝘀o 🖤',
 				error: {
-					stick: 'Bem falhou; (, tente repetir ^ _ ^ ',
+					stick: 'falhou cabeça de pika¯\_( ͡° ͜ʖ ͡°)_/¯, tente repetir ^ _ ^ ',
 					Iv: '𝗠𝗮𝗮𝗳 𝗹𝗶𝗻𝗸 𝘁𝗶𝗱𝗮𝗸 𝘃𝗮𝗹𝗶𝗱☹️'
 				},
 				only: {
@@ -167,7 +167,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["5516988466655@s.whatsapp.net"] 
+			const ownerNumber = ["5573981044096@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -275,21 +275,21 @@ client.on('group-participants-update', async (anu) => {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `𝗡𝗼𝗺𝗲 𝗱𝗼 𝗯𝗼𝘁 : ${me.name}\n*𝘕𝘶́𝘮𝘦𝘳𝘰 𝘥𝘰 𝘣𝘰𝘵* : @${me.jid.split('@')[0]}\n*𝗣𝗿𝗲𝗳𝗶𝘅* : ${prefix}\n𝗧𝗼𝘁𝗮𝗹 𝗱𝗲 𝗰𝗼𝗻𝘁𝗮𝘁𝗼𝘀 𝗯𝗹𝗼𝗾𝘂𝗲𝗮𝗱𝗼𝘀 : ${blocked.length}\n𝗢 𝗕𝗼𝘁 𝗲𝘀𝘁𝗮́ 𝗮𝘁𝗶𝘃𝗼 𝗲𝗺 : ${kyun(uptime)}\n`
+					teks = `𝗡𝗼𝗺𝗲 𝗱𝗼 𝗯𝗼𝘁 : ${fi do itachi}\n*𝘕𝘶́𝘮𝘦𝘳𝘰 𝘥𝘰 𝘣𝘰𝘵* : @${5573981044096('@')[0]}\n*𝗣𝗿𝗲𝗳𝗶𝘅* : ${prefix}\n𝗧𝗼𝘁𝗮𝗹 𝗱𝗲 𝗰𝗼𝗻𝘁𝗮𝘁𝗼𝘀 𝗯𝗹𝗼𝗾𝘂𝗲𝗮𝗱𝗼𝘀 : ${1}\n𝗢 𝗕𝗼𝘁 𝗲𝘀𝘁𝗮́ 𝗮𝘁𝗶𝘃𝗼 𝗲𝗺 : ${kyun(uptime)}\n`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
 				case 'blocklist': 
 					teks = '𝗕𝗟𝗢𝗖𝗞 𝗟𝗜𝗦𝗧 :\n'
 					for (let block of blocked) {
-						teks += `┣➢ @${block.split('@')[0]}\n`
+						teks += `┣➢ @${block.split('@')[0]}\n’
 					}
 					teks += `𝗧𝗼𝘁𝗮𝗹 : ${blocked.length}`
 					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
 					break
                 case 'hidetag':
 					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply('kamu siapa?')
+					if (!isOwner) return reply('Quem é Você?')
 					var value = body.slice(9)
 					var group = await client.groupMetadata(from)
 					var member = group['participants']
@@ -397,11 +397,11 @@ client.on('group-participants-update', async (anu) => {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('5516988466655@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('5573981044096@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
                     break
                 case 'ssweb':
-					if (args.length < 1) return reply('Urlnya mana om')
+					if (args.length < 1) return reply('Cadê o url tio')
 					teks = body.slice(7)
 					reply(mess.wait)
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/screenshotweb?url=${teks}`)
@@ -412,7 +412,7 @@ client.on('group-participants-update', async (anu) => {
 				    try {
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nekonime`, {method: 'get'})
 						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Cintai nekonime'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'lembrar! Amo nekonime'})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
 						reply(' *ERROR* ')
@@ -430,7 +430,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 			    case 'randomhentai':
 				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
+						if (!isNsfw) return reply('NSFW não está habilitado')
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai`, {method: 'get'})
 						buffer = await getBuffer(res.result)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'hentai teros'})
@@ -446,13 +446,12 @@ client.on('group-participants-update', async (anu) => {
 						buffer = await getBuffer(res.url)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
 					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply(' *ERROR* ')
+		
 					}
 					break
 			    case 'nsfwblowjob':
 				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
+						if (!isNsfw) return reply('NSFW não está habilitado')
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob`, {method: 'get'})
 						buffer = await getBuffer(res.result)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
@@ -463,7 +462,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 			    case 'nsfwneko':
 				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
+						if (!isNsfw) return reply('NSFW não está habilitado')
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko`, {method: 'get'})
 						buffer = await getBuffer(res.result)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ni anjim'})
@@ -474,7 +473,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'nsfwtrap':
 				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
+						if (!isNsfw) return reply('NSFW não está habilitado')
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwtrap`, {method: 'get'})
 						buffer = await getBuffer(res.result)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ni anjim'})
@@ -1034,7 +1033,7 @@ client.on('group-participants-update', async (anu) => {
 							reply(err)
 						})
 					} else {
-						reply(' *KIRIM FOTO DENGAN CAPTIO OCR* ')
+						reply(' *ENVIAR FOTOS COM CAPTIO OCR* ')
 					}
 					break
 				default:
