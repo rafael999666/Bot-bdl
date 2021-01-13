@@ -77,7 +77,7 @@ INSTALAÇÃO:
 |       ✅       | 18+.                             |
 |       ✅       | MAIS recursos em breve 🍂        |
 
-DARKZIN DOMINA 🐦❤️
+Itachin DOMINA 🐦❤️
 
 <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Mario_Gameplay.gif" alt="Mario Game" width="600" />
 
